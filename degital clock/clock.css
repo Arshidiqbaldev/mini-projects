@@ -61,13 +61,13 @@ body {
   align-items: center;
   justify-content: center;
   padding: 2rem 1rem;
-  background-image: url("https://cdn.midjourney.com/76a8f540-e987-4ba7-a3ac-d648719b9251/0_1.png");
+  background-image: url("https://cdn.midjourney.com/b26ef844-b04c-44e8-9a98-6438d86d3697/0_2.png");
   background-position: center ;
   background-size: cover;
 }
 
 .clock-card {
-  background: #a5a5a525;
+  background: #58585838;
   width: 100%;
   max-width: 400px;
   padding: 2rem;
@@ -94,7 +94,7 @@ body {
 .ss {
   font-family: var(--myFont2);
 
-  color: var(--white-2);
+  color: var(--white);
 }
 
 #mm {
@@ -102,6 +102,6 @@ body {
 }
 
 #ss {
-  color: var(--brand);
+  color: var(--white);
   font-size: 1rem;
 }

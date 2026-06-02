@@ -1,125 +1,259 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Theme System (Clean)</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Backdrop Filter - Mobile Optimized</title>
     <style>
-        :root {
-            --bg: white;
-            --text: black;
-            --btn-bg: #f0f0f0;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
         }
 
         body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: Arial;
-  
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
+            padding: 20px;
         }
 
-        button {
-            margin: 10px;
-            padding: 10px;
-            background: var(--btn-bg);
-            border: none;
-            cursor: pointer;
+        /* Animated background elements */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .circle1 {
+            width: 300px;
+            height: 300px;
+            background: #ff6b6b;
+            top: -50px;
+            left: -100px;
+        }
+
+        .circle2 {
+            width: 400px;
+            height: 400px;
+            background: #4ecdc4;
+            bottom: -100px;
+            right: -150px;
+            animation-delay: -5s;
+        }
+
+        .circle3 {
+            width: 200px;
+            height: 200px;
+            background: #ffe66d;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* OPTIMIZED CARD - Both techniques combined */
+        .card {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 1s ease;
+            /* Both optimization techniques */
+            backdrop-filter: blur(10px);
+            will-change: transform;
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+            
+            /* Additional performance optimizations */
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            perspective: 1000px;
+            
+            
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+        }
+
+        /* Info badge */
+        .info-badge {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            color: #00ff00;
+            font-family: monospace;
+            font-size: 13px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+        }
+
+        .info-badge div {
+            margin: 5px 0;
+        }
+
+        .badge-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        .checkmark {
+            color: #00ff00;
+        }
+
+        .warning {
+            background: rgba(255, 100, 100, 0.3);
+            backdrop-filter: blur(5px);
+            border-left: 4px solid #ff6b6b;
+            padding: 12px;
+            margin-top: 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            margin: 15px 0 10px 0;
+            font-size: 1.1rem;
+        }
+
+        p {
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        hr {
+            margin: 15px 0;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Mobile-specific adjustments */
+        @media (max-width: 768px) {
+            .card {
+                backdrop-filter: blur(8px); /* Slightly less blur on mobile */
+                padding: 20px;
+            }
+        }
+
+        /* For devices that prefer reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+           
+            .bg-circle {
+                animation: none;
+            }
+        }
+
+        /* High contrast mode fallback */
+        @media (prefers-contrast: high) {
+            .card {
+                backdrop-filter: none;
+                background: rgba(0, 0, 0, 0.7);
+            }
         }
     </style>
 </head>
-
 <body>
+    <div class="bg-pattern">
+        <div class="bg-circle circle1"></div>
+        <div class="bg-circle circle2"></div>
+        <div class="bg-circle circle3"></div>
+    </div>
 
-    <button id="light">☀️</button>
-    <button id="dark">🌙</button>
-    <button id="system">🖥️</button>
+    <div class="container">
+        <div class="info-badge">
+            <div class="badge-title">⚡ OPTIMIZATIONS ACTIVE</div>
+            <div><span class="checkmark">✓</span> backdrop-filter: blur(10px)</div>
+            <div><span class="checkmark">✓</span> will-change: transform</div>
+            <div><span class="checkmark">✓</span> transform: translateZ(0)</div>
+            <div><span class="checkmark">✓</span> -webkit-transform: translateZ(0)</div>
+            <div><span class="checkmark">✓</span> backface-visibility: hidden</div>
+            <hr>
+            <div>📱 Mobile-optimized blur (8px on &lt;768px)</div>
+        </div>
 
-    <h1>Hello Arshid</h1>
-    <p>This is theme system using object</p>
+        <div class="card">
+            <h2>✨ Glassmorphism Card</h2>
+            <p>This card uses <strong>backdrop-filter: blur(10px)</strong> with both mobile optimization techniques:</p>
+            <ul>
+                <li><strong>Technique 1:</strong> <code>will-change: transform</code></li>
+                <li><strong>Technique 2:</strong> <code>transform: translateZ(0)</code></li>
+                <li><strong>Extra:</strong> <code>backface-visibility: hidden</code></li>
+            </ul>
+            <p style="margin-top: 15px;">Scroll up/down to test performance. The blur should be smooth without glitches.</p>
+        </div>
 
-    <script>
+        <div class="card">
+            <h2>📱 Mobile Optimized</h2>
+            <p>On mobile devices (screen width &lt; 768px), the blur is automatically reduced from 10px to 8px for better performance while maintaining the glass effect.</p>
+            <p>The GPU acceleration forces the browser to use hardware rendering instead of software rendering.</p>
+        </div>
 
+        <div class="card">
+            <h2>🎯 Why This Works</h2>
+            <p><strong>will-change: transform</strong> - Tells the browser to expect transform changes, creating a separate compositor layer.</p>
+            <p><strong>translateZ(0)</strong> - Forces GPU acceleration by promoting the element to its own layer.</p>
+            <p><strong>backface-visibility: hidden</strong> - Prevents flickering during animations and scrolling.</p>
+        </div>
 
+        <div class="card">
+            <h2>🖥️ Browser Support</h2>
+            <p>✅ Chrome/Edge 76+<br>
+            ✅ Firefox 70+<br>
+            ✅ Safari 9+ (with -webkit- prefix)<br>
+            ✅ iOS Safari 9+<br>
+            ✅ Android Chrome 76+</p>
+            <p style="font-size: 12px; opacity: 0.8; margin-top: 10px;">Note: backdrop-filter is automatically prefixed on older browsers.</p>
+        </div>
 
-
-        let lightBtn = document.getElementById("light");
-        let darkBtn = document.getElementById("dark");
-        let systemBtn = document.getElementById("system");
-
-
-        let root = document.documentElement;
-
-        let themes = {
-            dark: {
-                "--bg": "#111111",
-                "--text": "#ffffff",
-                "--btn-bg": "#333333"
-            },
-            light: {
-                "--bg": "#ffffff",
-                "--text": "#000000",
-                "--btn-bg": "#f0f0f0"
-            }
-        };
-
-
-
-        function applyTheme(name) {
-
-            let theme = themes[name];
-
-            for (let key in theme) {
-                root.style.setProperty(key, theme[key]);
-            }
-
-        }
-
-
-        function setTheme(mode) {
-            if (mode === "system") {
-                let isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                if (isDark) {
-                    applyTheme("dark");
-
-                }
-                else {
-                    applyTheme("light");
-
-                }
-            }
-
-            else {
-                applyTheme(mode);
-            }
-
-
-        }
-
-        setTheme("system");
-
-        lightBtn.addEventListener("click", () => {
-            setTheme("light")
-        })
-
-        darkBtn.addEventListener("click", () => {
-            setTheme("dark")
-        })
-
-        systemBtn.addEventListener("click", () => {
-            setTheme("system")
-        })
-
-
-
-
-
-
-
-
-
-
-    </script>
-
+        <div class="warning">
+            ⚠️ <strong>Performance Note:</strong> If you still experience lag on very old devices, consider using <code>backdrop-filter: blur(5px)</code> or a semi-transparent background fallback.
+        </div>
+    </div>
 </body>
-
 </html>

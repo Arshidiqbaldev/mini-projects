@@ -1,36 +1,32 @@
-const displaytTime = document.getElementById("displayTime");
-
-const hourSpan = document.getElementById("hh");
-
-const minSpan = document.getElementById("mm");
-
-const secSpan = document.getElementById("ss");
-
-const displatyDate = document.getElementById("displaydate");
 
 
 
 
 
-function getTime() {
 
-    const now = new Date();
-
-
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
-    const seconds = now.getSeconds();
+const displayTime1 = document.getElementById("displayTime");
+const hourSpan1 = document.getElementById("hh");
+const minSpan1 = document.getElementById("mm");
+const secSpan1 = document.getElementById("ss");
 
 
-    const hh = String(hours).padStart(2, '0');
-    const mm = String(minutes).padStart(2, '0');
-    const ss = String(seconds).padStart(2, '0');
+function getTime1() {
+    const dateNow = new Date();
+
+    const hours1 = dateNow.getHours();
+    const minutes1 = dateNow.getMinutes();
+    const seconds1 = dateNow.getSeconds();
 
 
-    hourSpan.textContent = hh;
-    minSpan.textContent = mm;
-    secSpan.textContent = ss;
+    const hh1 = String(hours1).padStart(2, "0");
+    const mm1 = String(minutes1).padStart(2, "0");
+    const ss1 = String(seconds1).padStart(2, "0");
+
+
+    hourSpan1.textContent = hh1;
+    minSpan1.textContent = mm1 ;
+    secSpan1.textContent = ss1;
 
 }
 
-setInterval(getTime, 1000)
+setInterval (getTime1, 1000)

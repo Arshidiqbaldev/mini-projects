@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
 
 @font-face {
   font-family: "myFont";
@@ -30,7 +30,7 @@
 }
 
 body {
-  font-family: "Urbanist", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   background: var(--black);
   color: var(--white);
   display: flex;
@@ -169,8 +169,8 @@ body {
   corner-shape: var(--shape);
   font-size: 1rem;
   text-transform: capitalize;
-  font-family: "Urbanist", sans-serif;
-  font-weight: 700;
+  font-family: inherit;
+  font-weight: 500;
   word-spacing: 2px;
   cursor: pointer;
   transition: all 0.5s ease;

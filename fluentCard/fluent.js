@@ -1,9 +1,9 @@
+//for parent 1
+
 const parent = document.getElementById("parent");
 const children = document.querySelectorAll("#parent .child");
-
 const myAudio2 = new Audio("imgs/mouse-click.mp3");
 
-//for parent 1
 
 children.forEach((child, index) => {
     child.addEventListener("click", () => {

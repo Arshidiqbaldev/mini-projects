@@ -152,19 +152,7 @@ body {
   right: -10px;
 }
 
-.plus-icon.animate-icon {
-  animation: move1 1s ease alternate;
-  transform-origin: center;
-}
 
-@keyframes move1 {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 .accordion {
   display: flex;
