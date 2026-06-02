@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layered Shadows Demo</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            background: #131313;
+            font-family: "Albert Sans", sans-serif;
+            font-optical-sizing: auto;
+        }
+
+        .card {
+            width: 350px;
+            padding: 16px;
+            background: #e5e5e5;
+            border-radius: 30px;
+            border: 1px solid #00000009;
+            /* Your layered shadow */
+
+            box-shadow:
+                inset 1px 1.5px #ffffffa9,
+                0 1px 2px rgba(0, 0, 0, 0.04),
+                0 2px 4px rgba(0, 0, 0, 0.04),
+                0 4px 8px rgba(0, 0, 0, 0.05),
+                0 8px 16px rgba(0, 0, 0, 0.05),
+                0 16px 32px rgba(0, 0, 0, 0.05);
+            ;
+
+        }
+
+        h2 {
+            margin-bottom: 12px;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 24px;
+
+        }
+
+        button {
+            border: none;
+            outline: none;
+
+            cursor: pointer;
+            padding: 14px 24px;
+            border-radius: 40px;
+            border: 1px solid #0000001d;
+            background: #e5e5e5;
+            color: rgb(40, 40, 40);
+            font-size: 14px;
+            font-family: inherit;
+            text-transform: capitalize;
+
+            font-weight: 700;
+            /* Smaller layered shadow for button */
+            box-shadow:
+                inset 1px 1.5px #ffffffa9,
+                0 1px 2px rgba(0, 0, 0, 0.04),
+                0 2px 4px rgba(0, 0, 0, 0.04),
+                0 4px 8px rgba(0, 0, 0, 0.05),
+                0 8px 16px rgba(0, 0, 0, 0.05),
+                0 16px 32px rgba(0, 0, 0, 0.05);
+            ;
+
+            transition: .3s;
+        }
+
+
+        .card-2 {
+            width: 350px;
+            padding: 16px;
+            background: #1c1c1c;
+            border-radius: 30px;
+            border: 1px solid #ffffff0f;
+            /* Your layered shadow */
+            box-shadow:
+                inset 1px 1.5px rgba(0, 0, 0, 0.612),
+                0 1px 2px rgba(0, 0, 0, 0.04),
+                0 2px 4px rgba(0, 0, 0, 0.04),
+                0 4px 8px rgba(0, 0, 0, 0.05),
+                0 8px 16px rgba(0, 0, 0, 0.05),
+                0 16px 32px rgba(0, 0, 0, 0.05);
+
+        }
+
+        .card-2 h2 {
+            margin-bottom: 12px;
+            color: #f4f6f8;
+        }
+
+        .card-2 p {
+            color: #aeabab;
+
+            line-height: 1.5;
+            margin-bottom: 24px;
+
+        }
+
+        .card-2 button {
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 24px;
+            border-radius: 40px;
+            border: 1px solid #ffffff16;
+            background: #1c1c1c;
+            color: rgb(255, 255, 255);
+            font-size: 14px;
+            font-family: inherit;
+            text-transform: capitalize;
+            box-shadow:
+                inset 1px 1.5px rgba(0, 0, 0, 0.639),
+                0 1px 2px rgba(0, 0, 0, 0.04),
+                0 2px 4px rgba(0, 0, 0, 0.04),
+                0 4px 8px rgba(0, 0, 0, 0.05),
+                0 8px 16px rgba(0, 0, 0, 0.05),
+                0 16px 32px rgba(0, 0, 0, 0.05);
+            font-weight: 700;
+            /* Smaller layered shadow for button */
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h2>Layered Shadow Card</h2>
+        <p>
+            This card uses five stacked shadows to create a soft,
+            realistic elevation effect. The button uses a smaller
+            version of the same technique.
+        </p>
+
+        <button>Get Started</button>
+    </div>
+
+    <div class="card-2">
+        <h2>Layered Shadow Card</h2>
+        <p>
+            This card uses five stacked shadows to create a soft,
+            realistic elevation effect. The button uses a smaller
+            version of the same technique.
+        </p>
+
+        <button>Get Started</button>
+    </div>
+
+</body>
+
+</html>
