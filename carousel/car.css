@@ -7,15 +7,16 @@
     padding: 0;
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
+    corner-shape: squircle;
   }
 
 
   :root {
-    --shadow: 0px 2px 1px 0px #ffffffc5, 0px 2px 2px -1px #ffffff inset;
-    --bg: #ebebeb;
+    --shadow: 0px 1.5px 1px 0px #ffffffac, 0px 2px 2px -1px #ffffffe0 inset;
+    --bg: #e5e5e5;
     --transition: all 0.6s ease;
-    --border: 1px solid #0000000b;
-    --radius: 20px;
+    --border: 1px solid #00000009;
+    --radius: 40px;
   }
 
   body {
@@ -27,7 +28,7 @@
     align-items: center;
     padding: 1rem 5% 1rem 5%;
     gap: 10px;
-    background: #efefef;
+    background: #eeeeee;
     font-family: "Albert Sans", sans-serif;
     font-optical-sizing: auto;
   }
@@ -52,11 +53,10 @@
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-    padding: 10px;
+    padding: 6px;
     border-radius: var(--radius);
     background: var(--bg);
     border: var(--border);
-    box-shadow: var(--shadow);
     width: 100%;
     max-width: 800px;
 
@@ -81,9 +81,9 @@
 
 
   .btn{
-    padding: 10px 20px;
+    padding: 12px 20px;
     border: var(--border);
-    border-radius: var(--radius);
+    border-radius: 34px;
     box-shadow: var(--shadow);
     line-height: 1;
     
@@ -146,8 +146,8 @@
 
   .arrow {
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     cursor: pointer;
     z-index: 10;
     background: var(--bg);
