@@ -12,7 +12,7 @@
 
   :root {
     --shadow: 0px 2px 1px 0px #ffffffc5, 0px 2px 2px -1px #ffffff inset;
-    --bg: #e5e5e5;
+    --bg: #ebebeb;
     --transition: all 0.6s ease;
     --border: 1px solid #0000000b;
     --radius: 20px;
@@ -22,12 +22,12 @@
     min-height: 100vh;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     flex-direction: column;
     align-items: center;
     padding: 1rem 5% 1rem 5%;
     gap: 10px;
-    background: var(--bg);
+    background: #efefef;
     font-family: "Albert Sans", sans-serif;
     font-optical-sizing: auto;
   }
@@ -42,6 +42,55 @@
     width: 100%;
 
   }
+
+
+
+
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+    border-radius: var(--radius);
+    background: var(--bg);
+    border: var(--border);
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 800px;
+
+  }
+
+
+  .menu {
+    display: flex;
+    gap: 10px;
+    list-style-type: none;
+
+  }
+
+  li,
+  a {
+    text-decoration: none;
+    display: inline-block;
+    color: black;
+    font-size: 14px;
+    text-transform: capitalize;
+  }
+
+
+  .btn{
+    padding: 10px 20px;
+    border: var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    line-height: 1;
+    
+
+  }
+
+
 
 
   .carousel {
@@ -63,8 +112,8 @@
     width: 100%;
     padding-bottom: 10px;
     padding-top: 10px;
-    
- 
+
+
 
   }
 
@@ -132,7 +181,7 @@
       margin-right: 10px;
     }
 
-    
+
 
 
 
