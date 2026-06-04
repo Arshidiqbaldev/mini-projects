@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Carousel</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        .carousel {
+            width: 800px;
+            position: relative;
+        }
+
+        .viewport {
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .track {
+            display: flex;
+            gap: 20px;
+            transition: transform 0.5s ease;
+        }
+
+        .logo {
+            min-width: 180px;
+            height: 120px;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            background: black;
+            color: white;
+        }
+
+        #prev {
+            left: -60px;
+        }
+
+        #next {
+            right: -60px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="carousel">
+
+        <button id="prev">←</button>
+
+        <div class="viewport">
+            <div class="track">
+                <div class="logo">Google</div>
+                <div class="logo">Apple</div>
+                <div class="logo">Meta</div>
+                <div class="logo">Amazon</div>
+                <div class="logo">Netflix</div>
+                <div class="logo">Tesla</div>
+            </div>
+        </div>
+
+        <button id="next">→</button>
+
+    </div>
+
+    <script>
+
+        const track = document.querySelector('.track');
+        const nextBtn = document.querySelector('#next');
+        const prevBtn = document.querySelector('#prev');
+
+        let currentIndex = 0;
+
+        const slideWidth = 200;
+
+        nextBtn.addEventListener('click', () => {
+
+            currentIndex++;
+
+            if (currentIndex > 3) {
+                currentIndex = 3;
+            }
+
+            track.style.transform =
+                `translateX(-${currentIndex * slideWidth}px)`;
+
+        });
+
+        prevBtn.addEventListener('click', () => {
+
+            currentIndex--;
+
+            if (currentIndex < 0) {
+                currentIndex = 0;
+            }
+
+            track.style.transform =
+                `translateX(-${currentIndex * slideWidth}px)`;
+
+        });
+
+    </script>
+
+</body>
+
+</html>

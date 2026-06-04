@@ -1,159 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .error {
-            display: none;
-            width: 100%;
-            color: black;
-        }
+  <meta charset="UTF-8">
+  <title>Typing Animation</title>
+  <style>
+    .typing {
+      font-family: monospace;
+      font-size: 2rem;
+      white-space: nowrap;
+      overflow: hidden;
 
+      border-right: 3px solid #00ff88; /* cursor */
+      width: 2px; /* start hidden */
+      animation: typing 2s steps(20) forwards, blink 0.8s step-end infinite;
+    }
 
-        .task-text {
-            flex: 1;
-        }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 15ch; } /* adjust to text length */
+    }
 
-        .done .task-text {
-            text-decoration-line: line-through;
-        }
-    </style>
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+  </style>
 </head>
-
 <body>
-
-    <div class="form-div">
-
-
-        <div class="input-div">
-            <input type="text" name="task" id="taskInput" placeholder="add task">
-            <select name="type" id="type">
-                <option value="high">High</option>
-                <option value="medium">Medium</option>
-                <option value="low">Low</option>
-            </select>
-            <button id="addtask" onclick="addTask()">add task</button>
-        </div>
-
-        <p class="error">fill all field</p>
-
-
-
-    </div>
-
-    <div class="tasklist"></div>
-
-
-
-
-
-
-
-
-
-
-    <script>
-
-        const tasks = [
-            {
-                task: "reading",
-                type: "hard",
-                done: true,
-            },
-
-            {
-                task: "books",
-                type: "easy",
-                done: false,
-            }
-        ];
-
-
-        function randerTask() {
-
-            const list = document.querySelector(".tasklist");
-
-            list.innerHTML = "";
-
-            tasks.forEach(function (task, index) {
-                const item = document.createElement("div");
-
-                item.classList.add("card");
-                if (task.done) {
-                    item.classList.add("done");
-                }
-
-
-                item.innerHTML = `
-                 <input type="checkbox" ${task.done ? "checked" : ""} onchange="toggleTask(${index})">
-                 <span class="task-text">${task.task}</span>
-                 <span class="${task.type}"> ${task.type} </span>
-                 <button onclick="deleteTask(${index})">X</button>
-
-                `;
-
-
-                list.appendChild(item);
-
-            });
-
-        };
-
-
-        function addTask() {
-
-            const task = document.getElementById("taskInput").value.trim();
-            const type = document.getElementById("type").value;
-            const error = document.querySelector(".error");
-
-            if (task === "") {
-                error.style.display = "block";
-                return;
-            }
-
-            error.style.display = "none";
-
-            tasks.push({
-                task: task,
-                type: type,
-                done: false,
-            });
-
-            document.getElementById("taskInput").value = "";
-
-            randerTask();
-
-
-
-        };
-
-
-
-        function toggleTask(index) {
-            tasks[index].done = !tasks[index].done;
-            randerTask();
-        };
-
-
-        function deleteTask(index) {
-            tasks.splice(index, 1);
-            randerTask();
-        }
-
-
-
-
-
-
-
-
-        randerTask();
-
-
-    </script>
+  <div class="typing">Hello Developer <span class="line"></span></div>
 </body>
-
 </html>

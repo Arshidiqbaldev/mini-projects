@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+@font-face {
+    font-family: "myFont";
+    src: url("assets/Thunder-BlackLC.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    transition: all 0.8s ease;
+}
+
+:root {
+    --brand: #f60900;
+    --brand-dark: #7e0400;
+    --white: #fff;
+    --white-2: #e0e0e0;
+    --white-3: #888888;
+    --black: #000000;
+    --black-2: #141414;
+    --b-color: #e3ded5;
+    --black-3: #222222;
+    --border: 1px solid #1e1e1e;
+    --shape: squircle;
+    --myFont: "myFont", sans-serif;
+    --inset-shadow: 0px 1.5px 1px 0px #ffffff0f;
+    --emboss-shadow: 0px 1.5px 1px -1px #ffffff33 inset;
+}
+
+body {
+    font-family: "Space Grotesk", sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: var(--black);
+    color: var(--white);
+
+
+}
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 2rem;
+    padding: 15rem 0;
+    width: 100%;
+    cursor: pointer;
+   
+
+}
+
+
+.imgs-div {
+    display: flex;
+    gap: 1rem;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.my-img {
+    width: 120px;
+    border-radius: 20px;
+    border: var(--border);
+
+}
+
+.my-img:hover {
+    width:140px ;
+}
+
+#name-div {
+    
+    gap: 2rem;
+    width: auto;
+    max-width: auto;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+.name {
+    display: none;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+   
+
+
+
+}
+
+.n-ch {
+    font-family: var(--myFont);
+    text-transform: uppercase;
+    font-size: 40rem;
+    line-height: 0;
+    color: var(--brand);
+    transform: translateY(150px);
+    animation: fadeUp  0.8s ease both ;
+    padding: 18rem 0 11rem 0;
+}
+
+
+
+
+
+
+
+.parent-child-1 .name:nth-child(1){
+    display: flex;
+}
+
+
+.parent-child-2 .name:nth-child(2){
+    display: flex;
+}
+
+.parent-child-3 .name:nth-child(3){
+    display: flex;
+}
+
+
+
+.n-ch:nth-child(1){
+    animation-delay: 0.1s;
+}
+
+.n-ch:nth-child(2){
+    animation-delay: 0.2s;
+}
+
+.n-ch:nth-child(3){
+    animation-delay: 0.3s;
+}
+
+
+.n-ch:nth-child(4){
+    animation-delay: 0.2s;
+}
+
+
+.n-ch:nth-child(5){
+    animation-delay: 0.1s;
+}
+
+.n-ch:nth-child(6){
+    animation-delay: 0.2s;
+}
+
+.n-ch:nth-child(7){
+    animation-delay: 0.3s;
+}
+
+
+@keyframes fadeUp {
+
+    to{
+        transform: translateY(0);
+    }
+
+}

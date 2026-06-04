@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Auto SlideWidth Carousel</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f4f4f4;
+            font-family: Arial;
+        }
+
+        .carousel {
+            width: 600px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .track {
+            display: flex;
+            transition: transform 0.4s ease;
+        }
+
+        .logo {
+            min-width: 180px;
+            height: 120px;
+            margin-right: 20px;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background: black;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        #prev {
+            left: 10px;
+        }
+
+        #next {
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="carousel">
+
+        <button id="prev">←</button>
+
+        <div class="track">
+            <div class="logo">Google</div>
+            <div class="logo">Apple</div>
+            <div class="logo">Meta</div>
+            <div class="logo">Amazon</div>
+            <div class="logo">Netflix</div>
+        </div>
+
+        <button id="next">→</button>
+
+    </div>
+
+    <script>
+
+        const track = document.querySelector('.track');
+        const cards = document.querySelectorAll('.logo');
+        const nextBtn = document.querySelector('#next');
+        const prevBtn = document.querySelector('#prev');
+
+        let currentIndex = 0;
+
+        // ✅ AUTO CALCULATION (no guessing)
+        const card = document.querySelector('.logo');
+        const style = getComputedStyle(card);
+
+        const width = card.offsetWidth;
+        const gap = parseInt(style.marginRight || 0);
+
+        const slideWidth = width + gap;
+
+        nextBtn.addEventListener('click', () => {
+
+            if (currentIndex < cards.length - 1) {
+                currentIndex++;
+            }
+
+            track.style.transform =
+                `translateX(-${currentIndex * slideWidth}px)`;
+
+        });
+
+        prevBtn.addEventListener('click', () => {
+
+            if (currentIndex > 0) {
+                currentIndex--;
+            }
+
+            track.style.transform =
+                `translateX(-${currentIndex * slideWidth}px)`;
+
+        });
+
+    </script>
+
+</body>
+
+</html>
