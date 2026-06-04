@@ -16,7 +16,7 @@
     --bg: #e5e5e5;
     --transition: all 0.6s ease;
     --border: 1px solid #00000009;
-    --radius: 40px;
+    --radius: 60px;
   }
 
   body {
@@ -83,9 +83,8 @@
   .btn{
     padding: 12px 20px;
     border: var(--border);
-    border-radius: 34px;
+    border-radius: 54px;
     box-shadow: var(--shadow);
-    line-height: 1;
     
 
   }
