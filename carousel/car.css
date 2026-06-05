@@ -31,6 +31,7 @@
     background: #eeeeee;
     font-family: "Albert Sans", sans-serif;
     font-optical-sizing: auto;
+    line-height: 150%;
   }
 
 
@@ -80,12 +81,13 @@
   }
 
 
-  .btn{
+  .btn {
     padding: 12px 20px;
     border: var(--border);
     border-radius: 54px;
     box-shadow: var(--shadow);
-    
+    line-height: 100%;
+
 
   }
 
@@ -124,13 +126,45 @@
     transition: var(--transition);
     border: var(--border);
     background: var(--bg);
-    box-shadow: var(--shadow);
+  
     padding: 10px;
     border-radius: var(--radius);
     align-items: center;
     justify-content: center;
     margin-right: 10px;
+    background: url("https://cdn.midjourney.com/17d0ae66-3096-46a0-b768-fe480e00b2a8/0_2.png") no-repeat top/cover;
+
   }
+
+  .card:nth-child(2) {
+    background-image: url("https://cdn.midjourney.com/ca44d18a-48ad-4176-a6ec-9a07864c4287/0_0.png");
+  }
+
+  .card:nth-child(3) {
+    background-image: url("https://cdn.midjourney.com/d11d5cce-a168-4dd4-9bcb-e8fe1323371a/0_0.png");
+  }
+
+  .card:nth-child(3) {
+    background-image: url("https://cdn.midjourney.com/d11d5cce-a168-4dd4-9bcb-e8fe1323371a/0_0.png");
+  }
+
+  .card:nth-child(4){
+    background-image: url("https://cdn.midjourney.com/a2946dac-50b1-4b61-99b3-4cf2273b1142/0_0.png");
+  }
+
+  .card:nth-child(5){
+    background-image: url("https://cdn.midjourney.com/b7925943-d47d-437c-996f-b178b94999b3/0_0.png");
+  }
+
+   .card:nth-child(6){
+    background-image: url("https://cdn.midjourney.com/1a22a08c-fea1-42f0-8e77-fcda8e225e26/0_1.png");
+  }
+
+  .card:nth-child(7){
+    background-image: url("https://cdn.midjourney.com/1fce053b-ac43-43dc-add9-1bc8ed04d3b0/0_1.png");
+  }
+
+
 
 
   .no {
@@ -169,6 +203,62 @@
     transform: translateX(-50%);
   }
 
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    background: var(--bg);
+    border: var(--border);
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    overflow: hidden;
+    padding: 8px;
+
+  }
+
+
+  .ab-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .heading2 {
+    font-size: 2rem;
+    font-weight: 500;
+    word-spacing: -2px;
+    letter-spacing: -2%;
+    text-transform: capitalize;
+  }
+
+  .p-desc {
+    font-size: 1rem;
+
+  }
+
+  .img-div {
+    display: flex;
+    width: 100%;
+  }
+
+
+  .p-img {
+    width: 100%;
+    border-radius: 52px;
+    border: var(--border);
+    box-shadow: var(--shadow);
+    max-height: 700px;
+    object-fit: cover;
+    object-position:  top;
+  }
 
 
 
@@ -180,6 +270,13 @@
       margin-right: 10px;
     }
 
+
+    .about {
+      display: flex;
+      flex-direction: row;
+
+
+    }
 
 
 
