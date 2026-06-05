@@ -14,7 +14,7 @@
   :root {
     --shadow: 0px 1.5px 1px 0px #ffffffac, 0px 2px 2px -1px #ffffffe0 inset;
     --bg: #e5e5e5;
-    --transition: all 0.6s ease;
+    --transition: all 0.6s ease-in-out;
     --border: 1px solid #00000009;
     --radius: 60px;
   }
@@ -104,6 +104,7 @@
     overflow: hidden;
 
 
+
   }
 
 
@@ -116,7 +117,28 @@
 
 
 
+
+
   }
+
+
+  .animated {
+    animation: carousel 12s linear 1s alternate infinite;
+  }
+
+
+  @keyframes carousel {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-1550px);
+    }
+  }
+
+
+
 
   .card {
     display: flex;
@@ -126,13 +148,13 @@
     transition: var(--transition);
     border: var(--border);
     background: var(--bg);
-  
     padding: 10px;
     border-radius: var(--radius);
     align-items: center;
     justify-content: center;
     margin-right: 10px;
     background: url("https://cdn.midjourney.com/17d0ae66-3096-46a0-b768-fe480e00b2a8/0_2.png") no-repeat top/cover;
+    cursor: pointer;
 
   }
 
@@ -148,19 +170,19 @@
     background-image: url("https://cdn.midjourney.com/d11d5cce-a168-4dd4-9bcb-e8fe1323371a/0_0.png");
   }
 
-  .card:nth-child(4){
+  .card:nth-child(4) {
     background-image: url("https://cdn.midjourney.com/a2946dac-50b1-4b61-99b3-4cf2273b1142/0_0.png");
   }
 
-  .card:nth-child(5){
+  .card:nth-child(5) {
     background-image: url("https://cdn.midjourney.com/b7925943-d47d-437c-996f-b178b94999b3/0_0.png");
   }
 
-   .card:nth-child(6){
+  .card:nth-child(6) {
     background-image: url("https://cdn.midjourney.com/1a22a08c-fea1-42f0-8e77-fcda8e225e26/0_1.png");
   }
 
-  .card:nth-child(7){
+  .card:nth-child(7) {
     background-image: url("https://cdn.midjourney.com/1fce053b-ac43-43dc-add9-1bc8ed04d3b0/0_1.png");
   }
 
@@ -257,7 +279,7 @@
     box-shadow: var(--shadow);
     max-height: 700px;
     object-fit: cover;
-    object-position:  top;
+    object-position: top;
   }
 
 

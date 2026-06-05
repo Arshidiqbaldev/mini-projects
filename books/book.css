@@ -12,6 +12,7 @@
   margin: 0;
   padding: 0;
   -webkit-tap-highlight-color: transparent;
+  corner-shape: squircle;
 }
 
 :root {
@@ -24,9 +25,13 @@
   --black-2: #141414;
   --b-color: #e3ded5;
   --black-3: #222222;
-  --border: 1px solid #1e1e1e;
   --shape: squircle;
-  --myFont: "myFont", sans-serif;
+  --myFont: "Urbanist", sans-serif;
+  --shadow: 0px 1.5px 1px 0px #ffffffac, 0px 2px 2px -1px #ffffffe0 inset;
+  --bg: #e5e5e5;
+  --transition: all 0.6s ease;
+  --border: 1px solid #00000009;
+  --radius: 60px;
 }
 
 body {
@@ -81,23 +86,20 @@ body {
   gap: 1rem;
   width: 100%;
   max-width: 600px;
-  background: var(--white-2);
+  background: var(--bg);
   padding: 0.8rem;
-  border: 1px solid var(--black-2);
-  border-radius: 16px;
-  box-shadow: 3px 3px var(--black);
-  transition: all 0.3s ease;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: var(--border);
+  transition: var(--transition);
 }
-.book-form:hover {
-  transform: translate(-5px, -5px);
-  box-shadow: 8px 8px var(--black);
-}
+
 
 .book-form input,
 .book-form textarea {
   padding: 0.8rem;
-  border: 1px solid var(--b-color);
-  border-radius: 8px;
+  border: var(--border);
+  border-radius: var(--radius);
   font-size: 0.875rem;
   width: 100%;
   font-family: inherit;
@@ -114,20 +116,19 @@ textarea:focus {
 }
 
 .book-form .submit-btn {
-  background: var(--brand);
-  color: var(--white);
+  background: var(--bg);
+  color: var(--black);
   border: none;
   padding: 0.75rem;
-  border-radius: 8px;
+  border-radius: var(--radius);
   font-size: 1rem;
   cursor: pointer;
   font-family: var(--myFont);
-  transition: background 0.3s ease;
+  border: var(--border);
+  box-shadow: var(--shadow);
 }
 
-.book-form .submit-btn:hover {
-  background: var(--brand-dark);
-}
+
 
 .error {
   color: red;
@@ -152,20 +153,16 @@ textarea:focus {
   align-items: start;
   background: var(--white);
   padding: 0.8rem;
-  border: 1px solid var(--black-2);
-  border-radius: 16px;
-  box-shadow: 3px 3px var(--black);
+  background: var(--bg);
+  border-radius: var(--radius);
+  border: var(--border);
+  box-shadow: var(--shadow);
   transition: all 0.3s ease;
   cursor: pointer;
   gap: 1rem;
   width: 100%;
 }
 
-.bookCard:hover {
-  transform: translate(-5px, -5px);
-  border-color: var(--brand);
-  box-shadow: 8px 8px var(--brand);
-}
 
 .book-name {
   font-size: 1.25rem;
@@ -177,25 +174,29 @@ textarea:focus {
   font-size: 1rem;
   color: var(--black-3);
 }
+
 .book-genre {
   font-size: 0.875rem;
   color: var(--black-3);
 }
+
 .book-year {
   font-size: 0.875rem;
   color: var(--black-3);
 }
 
 .delete-btn {
-  background: var(--black-3);
-  color: var(--white);
+  background: var(--bg);
+  color: var(--black);
   border: none;
   padding: 0.8rem 2rem;
-  border-radius: 8px;
+  border-radius: var(--radius);
   font-size: 0.875rem;
   cursor: pointer;
   font-family: var(--myFont);
   transition: background 0.3s ease;
+  border: var(--border);
+  box-shadow: var(--shadow);
 }
 
 .noBooks {
@@ -206,5 +207,4 @@ textarea:focus {
   width: 100%;
 }
 
-@media (max-width: 768px) {
-}
+@media (max-width: 768px) {}

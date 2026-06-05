@@ -6,6 +6,9 @@ try {
     const nextBtn = document.getElementById("next");
     let currentIndex = 0;
 
+    cards.forEach((card) => {
+        card.classList.add("animated")
+    })
 
 
     // automatic
@@ -16,12 +19,40 @@ try {
     const gap = parseInt(cardStyle.marginRight || 0);
     const slideWidth = width + gap;
 
+    track.addEventListener("mouseover", () => {
+
+        cards.forEach((card) => {
+            card.style.animationPlayState = "paused"
+        })
+
+    });
+
+
+    track.addEventListener("mouseleave", () => {
+        cards.forEach((card) => {
+            card.style.animationPlayState = "running"
+        })
+    })
+
+
+
+
+
+
+
+
 
     // carousel
 
     nextBtn.addEventListener("click", () => {
         if (currentIndex < cards.length - 1) {
             currentIndex++;
+
+            cards.forEach((card) => {
+                card.classList.remove("animated")
+            })
+
+
         }
 
         track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
@@ -31,14 +62,41 @@ try {
     prevBtn.addEventListener("click", () => {
         if (currentIndex > 0) {
             currentIndex--;
+
         }
+
+
+        const animatedCon = cards.forEach((i) => {
+            i.classList.contains("animated");
+            i.classList.remove("animated");
+        })
 
         track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
     })
 
 
 
+    nextBtn.addEventListener("mouseleave", () => {
+
+        cards.forEach((card) => {
+            card.classList.add("animated")
+        })
+
+    })
+
+
+    prevBtn.addEventListener("mouseleave", () => {
+
+        cards.forEach((card) => {
+            card.classList.add("animated")
+        })
+
+    })
+
+
 
 } catch (error) {
     console.log(error)
 }
+
+
