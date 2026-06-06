@@ -123,7 +123,7 @@
 
 
   .animated {
-    animation: carousel 12s linear 1s alternate infinite;
+    animation: carousel 14s linear 1s alternate infinite;
   }
 
 
@@ -133,7 +133,7 @@
     }
 
     to {
-      transform: translateX(-1550px);
+      transform: translateX(-1570px);
     }
   }
 
@@ -153,7 +153,7 @@
     align-items: center;
     justify-content: center;
     margin-right: 10px;
-    background: url("https://cdn.midjourney.com/17d0ae66-3096-46a0-b768-fe480e00b2a8/0_2.png") no-repeat top/cover;
+    background: url("https://cdn.midjourney.com/79e12224-76c2-4aeb-aa58-256b5c5b5e99/0_1.png") no-repeat top/cover;
     cursor: pointer;
 
   }
@@ -281,6 +281,31 @@
     object-fit: cover;
     object-position: top;
   }
+
+
+  .overlay{
+    display: inline-block;
+    width: 40px;
+    background: linear-gradient(-90deg, transparent, #eeeeee);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2; 
+    
+  }
+
+  .overlay-2{
+    display: inline-block;
+    width: 40px;
+    background: linear-gradient(90deg, transparent, #eeeeee);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2; 
+  }
+
 
 
 

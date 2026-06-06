@@ -78,18 +78,44 @@ try {
 
     nextBtn.addEventListener("mouseleave", () => {
 
-        cards.forEach((card) => {
-            card.classList.add("animated")
-        })
+        if (currentIndex < cards.length - 1) {
+
+            track.style.transform = `translateX(0)`;
+
+            currentIndex = 0;
+
+
+
+            cards.forEach((card) => {
+                card.classList.add("animated")
+            })
+
+        }
+
+
+
+
 
     })
 
 
     prevBtn.addEventListener("mouseleave", () => {
 
-        cards.forEach((card) => {
-            card.classList.add("animated")
-        })
+        if (currentIndex < cards.length - 1) {
+            track.style.transform = `translateX(0)`;
+            currentIndex = 0;
+
+
+
+
+            cards.forEach((card) => {
+                card.classList.add("animated")
+            })
+
+
+        }
+
+
 
     })
 
