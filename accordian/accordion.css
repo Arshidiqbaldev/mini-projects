@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght,ROND@6..144,1..1000,100&display=swap');
 
 *,
 *::before,
@@ -7,6 +7,7 @@
   margin: 0;
   padding: 0;
   -webkit-tap-highlight-color: transparent;
+
 }
 
 @font-face {
@@ -39,13 +40,18 @@
 }
 
 body {
-  font-family: "Urbanist", sans-serif;
+  font-family: "Google Sans Flex", sans-serif;
   background: var(--black);
   color: var(--white);
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  font-variation-settings:
+    "slnt" 0,
+    "wdth" 100,
+    "GRAD" 0,
+    "ROND" 100;
 }
 
 .content {
@@ -64,8 +70,9 @@ body {
   font-family: var(--myFont);
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--white-3);
+  color: oklch(61.271% 0.24919 29.52);
 }
+
 .accordion {
   display: flex;
   flex-direction: column;
@@ -79,7 +86,7 @@ body {
   border-radius: 32px;
   corner-shape: var(--shape);
   justify-content: center;
-  
+
   align-items: center;
   box-shadow: var(--emboss-shadow);
   transition: all 0.8s ease;
@@ -125,7 +132,7 @@ body {
   overflow: hidden;
   font-size: 16px;
   color: var(--white-2);
-  line-height: 150%;
+ 
 }
 
 .answer {
@@ -168,7 +175,7 @@ body {
   corner-shape: var(--shape);
   justify-content: center;
   align-items: center;
- 
+
   transition: all 0.8s ease;
   width: 100%;
   overflow: hidden;
@@ -178,7 +185,7 @@ body {
 }
 
 
-.question-2{
+.question-2 {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -193,14 +200,14 @@ body {
 
 }
 
-.icon-2{
+.icon-2 {
   color: var(--brand);
   font-size: 1.3rem;
-    transition: all 0.8s ease;
+  transition: all 0.8s ease;
 }
 
 
-.answer-div{
+.answer-div {
   display: grid;
   grid-template-rows: 0fr;
   transition: all 0.8s ease;
@@ -209,7 +216,7 @@ body {
 
 
 
-.answer-child{
+.answer-child {
   overflow: hidden;
   font-size: 1rem;
   color: var(--white-2);
@@ -217,7 +224,7 @@ body {
 }
 
 
-.answer-copy{
+.answer-copy {
 
   gap: 1rem;
   display: flex;
@@ -225,7 +232,7 @@ body {
 
 }
 
-.imgs{
+.imgs {
   width: 100%;
   height: 200px;
   object-fit: cover;
@@ -234,12 +241,12 @@ body {
 }
 
 
-.item-2.open-2{
+.item-2.open-2 {
   background: var(--black-3);
 
 }
 
-.item-2.open-2 .answer-div{
+.item-2.open-2 .answer-div {
   grid-template-rows: 1fr;
   padding: 10px;
 
@@ -248,7 +255,6 @@ body {
 
 
 
-.item-2.open-2 .icon-2{
+.item-2.open-2 .icon-2 {
   transform: rotate(-45deg);
 }
-

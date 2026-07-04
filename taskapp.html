@@ -1,8 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Typing Animation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A typing animation demo with a live text reveal effect and blinking cursor.">
+  <meta name="keywords" content="typing animation, text cursor, CSS animation, front-end demo, motion effects">
+  <meta name="author" content="Arshid Iqbal">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Typing Animation Demo | Mini Projects">
+  <meta property="og:description" content="A typing animation demo with a live text reveal effect and blinking cursor.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <title>Typing Animation Demo | Mini Projects</title>
   <style>
     .typing {
       font-family: monospace;
@@ -10,22 +20,35 @@
       white-space: nowrap;
       overflow: hidden;
 
-      border-right: 3px solid #00ff88; /* cursor */
-      width: 2px; /* start hidden */
+      border-right: 3px solid #00ff88;
+      /* cursor */
+      width: 2px;
+      /* start hidden */
       animation: typing 2s steps(20) forwards, blink 0.8s step-end infinite;
     }
 
     @keyframes typing {
-      from { width: 0; }
-      to { width: 15ch; } /* adjust to text length */
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 15ch;
+      }
+
+      /* adjust to text length */
     }
 
     @keyframes blink {
-      50% { border-color: transparent; }
+      50% {
+        border-color: transparent;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="typing">Hello Developer <span class="line"></span></div>
 </body>
+
 </html>

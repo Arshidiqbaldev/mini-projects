@@ -24,9 +24,9 @@ function getTime1() {
 
 
     hourSpan1.textContent = hh1;
-    minSpan1.textContent = mm1 ;
+    minSpan1.textContent = mm1;
     secSpan1.textContent = ss1;
 
 }
 
-setInterval (getTime1, 1000)
+setInterval(getTime1, 1000)
