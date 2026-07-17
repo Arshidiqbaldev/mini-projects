@@ -285,6 +285,15 @@
         fBtn.addEventListener("click", bgChange);
 
 
+        document.addEventListener("keydown" , (event)=>{
+
+            if (event.key === "Enter"){
+                bgChange();
+            }
+            
+        })
+
+
 
 
 
