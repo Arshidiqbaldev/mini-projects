@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <main>
+        <p id="demo"></p>
+        <p id="id"></p>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+
+        async function getData() {
+            const demo = document.getElementById("demo");
+            const id = document.getElementById("id");
+
+            const userData = await fetch('https://jsonplaceholder.typicode.com/posts');
+            const response = await userData.json();
+            const result = console.log(response);
+            demo.textContent = `${response[0].body}`;
+            id.textContent = `${response[0].id}`;
+
+
+
+
+            console.log(typeof (response));
+
+
+
+
+
+
+
+        }
+        getData();
+
+
+    </script>
+</body>
+
+</html>
