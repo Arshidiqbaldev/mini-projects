@@ -5,14 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
 </head>
 
-<body>
+<body class="w-full bg-gray-950 text-gray-200 text-base">
 
 
-    <main>
-        <p id="demo"></p>
-        <p id="id"></p>
+    <main class="flex w-full  item-center justify-center gap-2">
+
+
+        <div id="main" class="flex w-full item-center justify-center gap-2 py-20">
+
+            <div id="postGrid" class="w-full grid rows-auto grid-cols-3 gap-5 max-w-500">
+
+            </div>
+
+
+
+        </div>
+
+
+
     </main>
 
 
@@ -33,26 +48,54 @@
         async function getData() {
             const demo = document.getElementById("demo");
             const id = document.getElementById("id");
-
+            const main = document.getElementById("main")
+            const postGrid = document.getElementById("postGrid")
             const userData = await fetch('https://jsonplaceholder.typicode.com/posts');
             const response = await userData.json();
+
+            response.forEach(element => {
+                const postCard = document.createElement("div");
+                postCard.className = "card p-4 bg-gray-700/50 rounded-2xl";
+                postCard.innerHTML = `
+                
+                <h1 class="id">
+                    ${element.id}
+                </h1>
+                <p class="body">
+
+                     ${element.title}
+                    
+
+                </p>
+
+                 <p class="body">
+
+                     ${element.body}
+                    
+
+                </p>
+                
+            `;
+
+                postGrid.appendChild(postCard);
+
+
+
+
+            });
+
+
+
+
+
+
             const result = console.log(response);
-            demo.textContent = `${response[0].body}`;
-            id.textContent = `${response[0].id}`;
-
-
-
-
             console.log(typeof (response));
-
-
-
-
-
-
-
         }
         getData();
+
+
+
 
 
     </script>
