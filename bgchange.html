@@ -31,6 +31,12 @@
  | Created with Precise Type / https://precise-type.com
  | Tools & Models by Adonis Raul Raduca
  */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
 
         /* --- Font Sizes --- */
 
@@ -113,9 +119,11 @@
             line-height: var(--line-height);
             letter-spacing: var(--letter-space);
             font-family: "Bricolage Grotesque", sans-serif;
-            font-optical-sizing: auto;
-            font-style: normal;
-            text-transform: capitalize;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+
+
         }
 
         /* --- Headers --- */
@@ -128,6 +136,8 @@
             font-size: var(--font-size-3);
             line-height: var(--line-height-3);
             letter-spacing: var(--letter-space-3);
+            text-align: center;
+
         }
 
         h2 {
@@ -166,7 +176,7 @@
             width: 100%;
             justify-content: center;
             align-items: center;
-            padding: 2rem;
+            padding: 1rem;
 
         }
 
@@ -225,6 +235,8 @@
 
 
         <h1>type to change the bg color</h1>
+
+
         <input id="bg-code" type="text" class="bg-code" placeholder="#000000">
 
         <p style="display: none;" class="input-data-code"></p>
@@ -286,12 +298,12 @@
         fBtn.addEventListener("click", bgChange);
 
 
-        document.addEventListener("keydown" , (event)=>{
+        document.addEventListener("keydown", (event) => {
 
-            if (event.key === "Enter"){
+            if (event.key === "Enter") {
                 bgChange();
             }
-            
+
         })
 
 
@@ -300,4 +312,4 @@
 
 </body>
 
-</html>;
+</html>
