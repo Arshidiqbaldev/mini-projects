@@ -10,7 +10,7 @@
 
 </head>
 
-<body class="w-full bg-gray-950 text-gray-200 text-base">
+<body class="w-full bg-black text-gray-200 text-base">
 
 
     <main class="flex w-full  item-center justify-center gap-2">
@@ -18,7 +18,7 @@
 
         <div id="main" class="flex w-full item-center justify-center gap-2 py-20">
 
-            <div id="postGrid" class="w-full grid rows-auto grid-cols-3 gap-5 max-w-500">
+            <div id="postGrid" class="w-full grid rows-auto grid-cols-3 gap-5 max-w-400">
 
             </div>
 
@@ -55,20 +55,20 @@
 
             response.forEach(element => {
                 const postCard = document.createElement("div");
-                postCard.className = "card p-4 bg-gray-700/50 rounded-2xl";
+                postCard.className = "card p-4 gap-5 flex flex-col bg-zinc-500/10 border border-gray-500/12 rounded-2xl";
                 postCard.innerHTML = `
                 
-                <h1 class="id">
+                <h1 class="id text-xl text-gray-500 ">
                     ${element.id}
                 </h1>
-                <p class="body">
+                <p class="text-2xl text-zinc-300 capitalize ">
 
                      ${element.title}
                     
 
                 </p>
 
-                 <p class="body">
+                 <p class="body text-zinc-400">
 
                      ${element.body}
                     
